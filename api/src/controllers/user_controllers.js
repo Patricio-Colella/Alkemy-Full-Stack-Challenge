@@ -1,26 +1,12 @@
 const { User,Operation } = require("../db")
 
-const sign_up = async(req,res,next)=>{
+const ingress = async(req,res,next)=>{
     try {
-        await User.create(req.body)
-        res.send("creado")
+        const user = await User.findOrCreate({where:req.body,defaults:req.body})
+        res.send(user)
     } catch (error) {
         console.log(error.message)
         res.status(400).send(error.message)
-    }
-}
-
-const login = async(req,res,next)=>{
-    const {password,email} = req.query
-    try {
-        const user_loged = await User.findOne({
-            where:{password,email},
-            include:{model:Operation}
-        })
-        res.send(user_loged)
-    } catch (error) {
-        console.log(error.message)
-        res.status(400).send()
     }
 }
 
@@ -45,8 +31,7 @@ const get_users = async(req,res,next)=>{
 
 
 module.exports={
-    sign_up,
-    login,
+    ingress,
     get_users,
     edit_user
 }

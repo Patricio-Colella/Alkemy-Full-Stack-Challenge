@@ -1,0 +1,14 @@
+:root{
+    --header-bg-color:hwb(240 13% 53%);
+    --home-bg-color:rgb(47, 47, 180);
+    --header-bg-color-dark:black;
+    --home-bg-color-dark:rgb(80, 75, 75);
+}
+
+#home{
+    background-color: var(--home-bg-color);
+    height: 100vh;
+    width: 100vw;
+}
+
+

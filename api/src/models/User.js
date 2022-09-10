@@ -9,22 +9,13 @@ module.exports = (sequelize) => {
         autoIncrement:true,
         primaryKey:true
     },
-    name:{
+    user_name:{
         type: DataTypes.STRING,
         allowNull: false,
     },
-    user_name:{
-        type: DataTypes.FLOAT,
-        // allowNull: false,
-    },
-    password: {
-      type:DataTypes.STRING,
-    },
-    email: {
-      type: DataTypes.STRING,
-    },
     profile_picture: {
         type: DataTypes.STRING,
+        defaulValue:""
     },
     account_amount: {
         type: DataTypes.INTEGER,

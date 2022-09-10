@@ -1,11 +1,10 @@
 const { Router } = require('express');
 
-const {sign_up, login,edit_user,get_users} = require("../controllers/user_controllers")
+const {ingress,edit_user,get_users} = require("../controllers/user_controllers")
 
 const router = Router();
 
-router.post("/",sign_up)
-router.get("/login",login)
+router.post("/",ingress)
 router.put("/:ID",edit_user)
 router.get("/",get_users)
 
